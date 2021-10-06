@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Message</string>
+    <string name="sign_in_launcher">Chào mừng!</string>
+    <string name="creat_new_account">Tạo tài khoản</string>
+    <string name="email">Email</string>
+    <string name="password">Mật khẩu</string>
+    <string name="confirm_password">Nhập lại mật khẩu</string>
+    <string name="sign_in">Đăng nhập</string>
+    <string name="not_have_account">Bạn chưa có tài khoản?</string>
+    <string name="have_account">Bạn đã có tài khoản?</string>
+    <string name="sign_up"> Đăng ký</string>
+    <string name="name">Tên người dùng</string>
+</resources>
