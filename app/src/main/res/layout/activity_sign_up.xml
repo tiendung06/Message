@@ -38,7 +38,7 @@
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
                     android:importantForAutofill="no"
-                    android:inputType="textEmailAddress"
+                    android:inputType="textPersonName"
                     android:paddingStart="@dimen/_16sdp"
                     android:paddingEnd="@dimen/_16sdp"
                     android:textSize="@dimen/_13sdp"/>
