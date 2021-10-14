@@ -78,6 +78,7 @@
             android:orientation="vertical"
             android:overScrollMode="never"
             android:padding="@dimen/_20sdp"
+            app:stackFromEnd="true"
             android:visibility="gone"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="@id/viewBackground"
