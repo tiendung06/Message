@@ -3,11 +3,10 @@ package com.example.message.activities;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Bundle;
 import android.util.Base64;
 import android.view.View;
 import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
 import com.example.message.adapters.RecentConversationAdapter;
 import com.example.message.databinding.ActivityMainBinding;
 import com.example.message.listeners.ConversionListener;
@@ -23,7 +22,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements ConversionListener {
+public class MainActivity extends BaseActivity implements ConversionListener {
     private ActivityMainBinding binding;
     private PreferenceManager preferenceManager;
     private List<ChatMessage> conversations;

@@ -2,10 +2,9 @@ package com.example.message.activities;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Bundle;
 import android.util.Base64;
 import android.view.View;
-import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
 import com.example.message.adapters.ChatAdapter;
 import com.example.message.databinding.ActivityChatBinding;
 import com.example.message.models.ChatMessage;
@@ -13,13 +12,13 @@ import com.example.message.models.User;
 import com.example.message.utilities.Constants;
 import com.example.message.utilities.PreferenceManager;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.firebase.firestore.*;
 import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.*;
 
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-public class ChatActivity extends AppCompatActivity {
+public class ChatActivity extends BaseActivity {
     private ActivityChatBinding binding;
     private User receiverUser;
     private List<ChatMessage> chatMessages;
@@ -27,6 +26,7 @@ public class ChatActivity extends AppCompatActivity {
     private PreferenceManager preferenceManager;
     private FirebaseFirestore database;
     private String conversionId = null;
+    private Boolean isReceiverAvailable = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +73,29 @@ public class ChatActivity extends AppCompatActivity {
             addConversion(conversion);
         }
         binding.inputMessage.setText(null);
+    }
+
+    private void listenAvailabilityOfReceiver() {
+        database.collection(Constants.KEY_COLLECTION_USERS).document(
+                receiverUser.id
+        ).addSnapshotListener(ChatActivity.this, (value, error) -> {
+            if (error != null) {
+                return;
+            }
+            if (value != null) {
+                if (value.getLong(Constants.KEY_AVAILABILITY) != null) {
+                    int availability = Objects.requireNonNull(
+                            value.getLong(Constants.KEY_AVAILABILITY)
+                    ).intValue();
+                    isReceiverAvailable = availability == 1;
+                }
+            }
+            if (isReceiverAvailable) {
+                binding.textAvailability.setVisibility(View.VISIBLE);
+            } else {
+                binding.textAvailability.setVisibility(View.GONE);
+            }
+        });
     }
 
     private void listenMessages() {
@@ -179,4 +202,10 @@ public class ChatActivity extends AppCompatActivity {
             conversionId = documentSnapshot.getId();
         }
     };
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        listenAvailabilityOfReceiver();
+    }
 }
