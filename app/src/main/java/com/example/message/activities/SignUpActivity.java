@@ -27,7 +27,7 @@ import java.util.Objects;
 
 public class SignUpActivity extends AppCompatActivity {
     private ActivitySignUpBinding binding;
-    private String encodeImage;
+    private String encodedImage;
     private PreferenceManager preferenceManager;
 
     @Override
@@ -64,7 +64,7 @@ public class SignUpActivity extends AppCompatActivity {
         user.put(Constants.KEY_NAME, Objects.requireNonNull(binding.inputName.getText()).toString());
         user.put(Constants.KEY_EMAIL, Objects.requireNonNull(binding.inputEmail.getText()).toString());
         user.put(Constants.KEY_PASSWORD, Objects.requireNonNull(binding.inputPassword.getText()).toString());
-        user.put(Constants.KEY_IMAGE, encodeImage);
+        user.put(Constants.KEY_IMAGE, encodedImage);
         database.collection(Constants.KEY_COLLECTION_USERS)
                 .add(user)
                 .addOnSuccessListener(documentReference -> {
@@ -72,7 +72,7 @@ public class SignUpActivity extends AppCompatActivity {
                     preferenceManager.putBoolean(Constants.KEY_IS_SIGN_IN, true);
                     preferenceManager.putString(Constants.KEY_USER_ID, documentReference.getId());
                     preferenceManager.putString(Constants.KEY_NAME, binding.inputName.getText().toString());
-                    preferenceManager.putString(Constants.KEY_IMAGE, encodeImage);
+                    preferenceManager.putString(Constants.KEY_IMAGE, encodedImage);
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
@@ -104,7 +104,7 @@ public class SignUpActivity extends AppCompatActivity {
                             Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
                             binding.imageProfile.setImageBitmap(bitmap);
                             binding.textAddImage.setVisibility(View.GONE);
-                            encodeImage = encodeImage(bitmap);
+                            encodedImage = encodeImage(bitmap);
                         } catch (FileNotFoundException e) {
                             e.printStackTrace();
                         }
@@ -114,7 +114,7 @@ public class SignUpActivity extends AppCompatActivity {
     );
 
     private Boolean isValidSignUpDetails() {
-        if (encodeImage == null) {
+        if (encodedImage == null) {
             showToast("Select profile image");
             return false;
         }
