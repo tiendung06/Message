@@ -161,7 +161,7 @@ public class ChatActivity extends BaseActivity {
                 if (receiverUser.image == null) {
                     receiverUser.image = value.getString(Constants.KEY_IMAGE);
                     chatAdapter.setReceiverProfileImage(getBitmapFromEncodedString(receiverUser.image));
-                    chatAdapter.notifyItemRangeInserted(0, chatMessages.size());
+                    chatAdapter.notifyItemRangeChanged(0, chatMessages.size());
                 }
             }
             if (isReceiverAvailable) {
