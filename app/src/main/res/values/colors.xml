@@ -7,6 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFF</color>
-    <color name="grey">#E5E4E9</color>
-    <color name="blue">#2392FD</color>
+    <color name="grey">#0D000000</color>
+    <color name="blue">#6474FF</color>
+    <color name="time">#4D000000</color>
+    <color name="text_input">#7D7D7D</color>
+    <color name="text_hint">#999999</color>
+    <color name="text_recent">#66000000</color>
 </resources>
