@@ -82,13 +82,13 @@ public class SignInActivity extends AppCompatActivity {
 
     private Boolean isValidSignInDetails() {
         if (Objects.requireNonNull(binding.inputEmail.getText()).toString().trim().isEmpty()) {
-            showToast("Enter email");
+            binding.inputEmail.setError("Enter email");
             return false;
         } else if (!Patterns.EMAIL_ADDRESS.matcher(binding.inputEmail.getText().toString()).matches()) {
-            showToast("Enter valid email");
+            binding.inputEmail.setError("Enter valid email");
             return false;
         } else if (Objects.requireNonNull(binding.inputPassword.getText()).toString().isEmpty()) {
-            showToast("Enter password");
+            binding.inputPassword.setError("Enter password");
             return false;
         }
         return true;

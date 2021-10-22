@@ -119,22 +119,22 @@ public class SignUpActivity extends AppCompatActivity {
             return false;
         }
         if (Objects.requireNonNull(binding.inputName.getText()).toString().trim().isEmpty()) {
-            showToast("Nhap ten");
+            binding.inputName.setError("Enter name");
             return false;
         } else if (Objects.requireNonNull(binding.inputEmail.getText()).toString().trim().isEmpty()) {
-            showToast("Nhap email");
+            binding.inputEmail.setError("Enter email");
             return false;
         } else if (!Patterns.EMAIL_ADDRESS.matcher(binding.inputEmail.getText().toString()).matches()) {
-            showToast("Enter valid email");
+            binding.inputEmail.setError("Enter valid email");
             return false;
         } else if (Objects.requireNonNull(binding.inputPassword.getText()).toString().trim().isEmpty()) {
-            showToast("Enter password");
+            binding.inputPassword.setError("Enter password");
             return false;
         } else if (Objects.requireNonNull(binding.inputConfirmPassword.getText()).toString().trim().isEmpty()) {
-            showToast("Confirm your password");
+            binding.inputConfirmPassword.setError("Confirm password");
             return false;
         } else if (!binding.inputPassword.getText().toString().equals(binding.inputConfirmPassword.getText().toString())) {
-            showToast("Password & Confirm password must be same ");
+            binding.inputConfirmPassword.setError("Password & Confirm password must be same");
             return false;
         }
         return true;

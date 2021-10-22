@@ -101,7 +101,7 @@
                     android:paddingStart="@dimen/_3sdp"
                     android:paddingEnd="@dimen/_3sdp"
                     android:text="@string/sign_up"
-                    android:textColor="@color/purple_700"
+                    android:textColor="@color/blue"
                     android:textSize="@dimen/_12sdp"/>
         </LinearLayout>
 
