@@ -20,9 +20,11 @@
         <activity
                 android:name=".activities.SignUpActivity"
                 android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".activities.SignInActivity"
+                  android:windowSoftInputMode="adjustResize">
+        </activity>
         <activity
-                android:name=".activities.SignInActivity"
-                android:windowSoftInputMode="adjustResize">
+                android:name=".activities.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
