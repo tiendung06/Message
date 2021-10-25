@@ -12,4 +12,9 @@
     <string name="name">Tên người dùng</string>
     <string name="select_users">Select Users</string>
     <string name="online">Online</string>
+    <string name="change_avatar">Change avatar</string>
+    <string name="change_name">Change name</string>
+    <string name="change_password">Change password</string>
+    <string name="chat">Chat</string>
+    <string name="sign_out">Sign out</string>
 </resources>

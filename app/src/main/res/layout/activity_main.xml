@@ -34,7 +34,6 @@
             app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
-            android:id="@+id/textName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_8sdp"
@@ -42,6 +41,7 @@
             android:ellipsize="end"
             android:gravity="center"
             android:maxLines="1"
+            android:text="@string/chat"
             android:textSize="@dimen/_14sdp"
             android:textStyle="bold"
             android:textColor="@color/black"
