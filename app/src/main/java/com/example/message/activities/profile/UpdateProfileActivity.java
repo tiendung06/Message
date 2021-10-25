@@ -1,4 +1,4 @@
-package com.example.message.activities;
+package com.example.message.activities.profile;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -6,7 +6,9 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Base64;
 import android.widget.Toast;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import com.example.message.activities.SignInActivity;
 import com.example.message.databinding.ActivityUpdateProfileBinding;
 import com.example.message.utilities.Constants;
 import com.example.message.utilities.PreferenceManager;
@@ -48,16 +50,23 @@ public class UpdateProfileActivity extends AppCompatActivity {
     }
 
     private void signOut() {
-        FirebaseFirestore database = FirebaseFirestore.getInstance();
-        DocumentReference documentReference = database.collection(Constants.KEY_COLLECTION_USERS).document(
-                preferenceManager.getString(Constants.KEY_USER_ID));
-        HashMap<String, Object> updates = new HashMap<>();
-        updates.put(Constants.KEY_FCM_TOKEN, FieldValue.delete());
-        documentReference.update(updates).addOnSuccessListener(unused -> {
-                    preferenceManager.clear();
-                    startActivity(new Intent(getApplicationContext(), SignInActivity.class));
-                    finish();
-                })
-                .addOnFailureListener(e -> showToast("Unable to sign out"));
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setTitle("Sign out");
+        alert.setMessage("Do you want to sign out?");
+        alert.setPositiveButton("Yes", (dialog, which) -> {
+            FirebaseFirestore database = FirebaseFirestore.getInstance();
+            DocumentReference documentReference = database.collection(Constants.KEY_COLLECTION_USERS).document(
+                    preferenceManager.getString(Constants.KEY_USER_ID));
+            HashMap<String, Object> updates = new HashMap<>();
+            updates.put(Constants.KEY_FCM_TOKEN, FieldValue.delete());
+            documentReference.update(updates).addOnSuccessListener(unused -> {
+                        preferenceManager.clear();
+                        startActivity(new Intent(getApplicationContext(), SignInActivity.class));
+                        finish();
+                    })
+                    .addOnFailureListener(e -> showToast("Unable to sign out"));
+        });
+        alert.setNegativeButton("No", null);
+        alert.create().show();
     }
 }

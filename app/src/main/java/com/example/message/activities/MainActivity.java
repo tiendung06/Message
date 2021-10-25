@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Base64;
 import android.view.View;
 import android.widget.Toast;
+import com.example.message.activities.profile.UpdateProfileActivity;
 import com.example.message.adapters.RecentConversationAdapter;
 import com.example.message.databinding.ActivityMainBinding;
 import com.example.message.listeners.ConversionListener;
@@ -19,7 +20,6 @@ import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 
 public class MainActivity extends BaseActivity implements ConversionListener {
