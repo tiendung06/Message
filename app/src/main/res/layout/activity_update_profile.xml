@@ -46,52 +46,52 @@
                 android:textColor="@color/black"/>
 
         <androidx.cardview.widget.CardView
+                android:id="@+id/change_avatar"
                 android:layout_marginTop="@dimen/_16sdp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_12sdp"
-                android:layout_marginEnd="@dimen/_12sdp">
+                android:layout_marginHorizontal="@dimen/_24sdp">
 
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/change_avatar"
                     android:textSize="@dimen/_12sdp"
-                    android:textColor="@color/text_recent"
+                    android:textColor="@color/black"
                     android:padding="@dimen/_10sdp"
                     android:layout_gravity="center_vertical"/>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+                android:id="@+id/change_name"
                 android:layout_marginTop="@dimen/_16sdp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_12sdp"
-                android:layout_marginEnd="@dimen/_12sdp">
+               android:layout_marginHorizontal="@dimen/_24sdp">
 
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/change_name"
                     android:textSize="@dimen/_12sdp"
-                    android:textColor="@color/text_recent"
+                    android:textColor="@color/black"
                     android:padding="@dimen/_10sdp"
                     android:layout_gravity="center_vertical"/>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+                android:id="@+id/change_password"
                 android:layout_marginTop="@dimen/_16sdp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_12sdp"
-                android:layout_marginEnd="@dimen/_12sdp">
+                android:layout_marginHorizontal="@dimen/_24sdp">
 
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/change_password"
                     android:textSize="@dimen/_12sdp"
-                    android:textColor="@color/text_recent"
+                    android:textColor="@color/black"
                     android:padding="@dimen/_10sdp"
                     android:layout_gravity="center_vertical"/>
         </androidx.cardview.widget.CardView>
@@ -101,8 +101,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_25sdp"
-                android:layout_marginStart="@dimen/_12sdp"
-                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_24sdp"
                 app:cornerRadius="@dimen/_8sdp"
                 android:padding="@dimen/_10sdp"
                 android:text="@string/sign_out"/>

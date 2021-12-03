@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.util.Base64;
 import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
+import com.example.message.activities.BaseActivity;
 import com.example.message.activities.SignInActivity;
 import com.example.message.databinding.ActivityUpdateProfileBinding;
 import com.example.message.utilities.Constants;
@@ -18,7 +18,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 
-public class UpdateProfileActivity extends AppCompatActivity {
+public class UpdateProfileActivity extends BaseActivity {
     private ActivityUpdateProfileBinding binding;
     private String encodedImage;
     private PreferenceManager preferenceManager;
@@ -36,6 +36,10 @@ public class UpdateProfileActivity extends AppCompatActivity {
     private void setListener() {
         binding.imageBack.setOnClickListener(v -> onBackPressed());
         binding.imageSignOut.setOnClickListener(v -> signOut());
+        binding.changePassword.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), UpdatePasswordActivity.class);
+            startActivity(intent);
+        });
     }
 
     private void loadUserDetails() {
