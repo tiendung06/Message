@@ -231,11 +231,15 @@ public class ChatActivity extends BaseActivity {
 
     private void setListeners() {
         binding.imageBack.setOnClickListener(v -> onBackPressed());
-        binding.layoutSend.setOnClickListener(v -> sendMessage());
+        binding.layoutSend.setOnClickListener(v -> {
+            if (!binding.inputMessage.getText().toString().isEmpty()) {
+                sendMessage();
+            }
+        });
     }
 
     private String getReadableDateTime(Date date) {
-        return new SimpleDateFormat("MMMM dd, yyyy - hh:mm a", Locale.getDefault()).format(date);
+        return new SimpleDateFormat("hh:mm a, dd/MM/yyyy", Locale.getDefault()).format(date);
     }
 
     private void addConversion(HashMap<String, Object> conversion) {
