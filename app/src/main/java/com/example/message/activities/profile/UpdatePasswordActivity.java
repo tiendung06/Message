@@ -50,7 +50,7 @@ public class UpdatePasswordActivity extends BaseActivity {
                     preferenceManager.putString(Constants.KEY_PASSWORD,
                             binding.inputChangePassword.getText().toString().trim());
                     showToast("Đổi mật khẩu thành công");
-                    onBackPressed();
+                    finish();
                 })
                 .addOnFailureListener(e -> showToast("Không thể đổi mật khẩu"));
     }

@@ -36,6 +36,10 @@ public class UpdateProfileActivity extends BaseActivity {
     private void setListener() {
         binding.imageBack.setOnClickListener(v -> onBackPressed());
         binding.imageSignOut.setOnClickListener(v -> signOut());
+        binding.changeName.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), UpdateUsernameActivity.class);
+            startActivity(intent);
+        });
         binding.changePassword.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), UpdatePasswordActivity.class);
             startActivity(intent);
