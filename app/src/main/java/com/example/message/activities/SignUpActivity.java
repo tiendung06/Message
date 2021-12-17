@@ -116,31 +116,31 @@ public class SignUpActivity extends AppCompatActivity {
 
     private Boolean isValidSignUpDetails() {
         if (encodedImage == null) {
-            showToast("Select profile image");
+            showToast("Ảnh đại diện không được để trống");
             return false;
         }
         if (Objects.requireNonNull(binding.inputName.getText()).toString().trim().isEmpty()) {
-            binding.inputName.setError("Enter name");
+            binding.inputName.setError("Tên người dùng không được để trống");
             binding.inputName.requestFocus();
             return false;
         } else if (Objects.requireNonNull(binding.inputEmail.getText()).toString().trim().isEmpty()) {
-            binding.inputEmail.setError("Enter email");
+            binding.inputEmail.setError("Email không được để trống");
             binding.inputEmail.requestFocus();
             return false;
         } else if (!Patterns.EMAIL_ADDRESS.matcher(binding.inputEmail.getText().toString()).matches()) {
-            binding.inputEmail.setError("Enter valid email");
+            binding.inputEmail.setError("Nhập email hợp lệ");
             binding.inputEmail.requestFocus();
             return false;
         } else if (Objects.requireNonNull(binding.inputPassword.getText()).toString().trim().isEmpty()) {
-            binding.inputPassword.setError("Enter password");
+            binding.inputPassword.setError("Password không được để trống");
             binding.inputPassword.requestFocus();
             return false;
         } else if (Objects.requireNonNull(binding.inputConfirmPassword.getText()).toString().trim().isEmpty()) {
-            binding.inputConfirmPassword.setError("Confirm password");
+            binding.inputConfirmPassword.setError("Nhập lại mật khẩu không đúng");
             binding.inputConfirmPassword.requestFocus();
             return false;
         } else if (!binding.inputPassword.getText().toString().equals(binding.inputConfirmPassword.getText().toString())) {
-            binding.inputConfirmPassword.setError("Password & Confirm password must be same");
+            binding.inputConfirmPassword.setError("Nhập lại mật khẩu không đúng");
             binding.inputConfirmPassword.requestFocus();
             return false;
         }

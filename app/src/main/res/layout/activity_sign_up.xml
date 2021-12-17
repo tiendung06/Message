@@ -43,7 +43,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Add image"
+                    android:text="@string/choose_image"
                     android:textSize="@dimen/_10sdp"/>
 
         </FrameLayout>
@@ -61,7 +61,7 @@
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
                     android:importantForAutofill="no"
-                    android:inputType="textPersonName"
+                    android:inputType="textPersonName|textCapWords"
                     android:paddingStart="@dimen/_16sdp"
                     android:paddingEnd="@dimen/_16sdp"
                     android:textSize="@dimen/_13sdp"/>

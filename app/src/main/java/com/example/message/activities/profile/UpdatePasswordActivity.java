@@ -62,16 +62,16 @@ public class UpdatePasswordActivity extends BaseActivity {
             return false;
         } else if (!Objects.requireNonNull(binding.inputCurrentPassword.getText()).toString().trim().equals(
                 preferenceManager.getString(Constants.KEY_PASSWORD))) {
-            binding.inputCurrentPassword.setError("Mật khẩu cũ không đúng");
+            binding.inputCurrentPassword.setError("Mật khẩu hiện tại không đúng");
             binding.inputCurrentPassword.requestFocus();
             return false;
         } else if (Objects.requireNonNull(binding.inputChangePassword.getText()).toString().trim().isEmpty()) {
-            binding.inputChangePassword.setError("Nhập ật khẩu mới");
+            binding.inputChangePassword.setError("Nhập mật khẩu mới");
             binding.inputChangePassword.requestFocus();
             return false;
         } else if (!binding.inputChangePassword.getText().toString().equals(
                 Objects.requireNonNull(binding.inputConfirmChangePassword.getText()).toString())) {
-            binding.inputConfirmChangePassword.setError("Password & Confirm password must be same");
+            binding.inputConfirmChangePassword.setError("Xác nhận mật khẩu mới không đúng");
             binding.inputConfirmChangePassword.requestFocus();
             return false;
         }

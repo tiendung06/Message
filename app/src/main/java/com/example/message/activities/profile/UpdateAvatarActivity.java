@@ -80,7 +80,7 @@ public class UpdateAvatarActivity extends BaseActivity {
                     for (QueryDocumentSnapshot document : Objects.requireNonNull(task.getResult())) {
                         String documentID = document.getId();
                         collectionReference.document(documentID)
-                                .update(updateSenderImage);
+                                .update(updateSenderImage).addOnSuccessListener(unused -> finish());
                     }
                 });
 
@@ -92,10 +92,9 @@ public class UpdateAvatarActivity extends BaseActivity {
                     for (QueryDocumentSnapshot document : Objects.requireNonNull(task.getResult())) {
                         String documentID = document.getId();
                         collectionReference.document(documentID)
-                                .update(updateReceiverImage);
+                                .update(updateReceiverImage).addOnSuccessListener(unused -> finish());
                     }
                 });
-        finish();
     }
 
     private String encodeImage(Bitmap bitmap) {

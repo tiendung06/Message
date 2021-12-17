@@ -69,7 +69,7 @@ public class UsersActivity extends BaseActivity implements UserListener {
     }
 
     private void showErrorMessage() {
-        binding.textErrorMessage.setText(String.format("%s", "No user available"));
+        binding.textErrorMessage.setText(String.format("%s", "Không có người dùng khả dụng"));
         binding.textErrorMessage.setVisibility(View.VISIBLE);
     }
 

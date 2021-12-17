@@ -28,6 +28,8 @@ public class MainActivity extends BaseActivity implements ConversionListener {
     private List<ChatMessage> conversations;
     private RecentConversationAdapter conversationAdapter;
     private FirebaseFirestore database;
+    private long backPressedTime;
+    private Toast toast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +50,19 @@ public class MainActivity extends BaseActivity implements ConversionListener {
         loadUserDetails();
     }
 
+    @Override
+    public void onBackPressed() {
+        if (backPressedTime + 2000 > System.currentTimeMillis()) {
+            toast.cancel();
+            super.onBackPressed();
+            return;
+        } else {
+            toast = Toast.makeText(MainActivity.this, "Nhấn back lần nữa để thoát", Toast.LENGTH_SHORT);
+            toast.show();
+        }
+        backPressedTime = System.currentTimeMillis();
+    }
+
     private void init() {
         conversations = new ArrayList<>();
         conversationAdapter = new RecentConversationAdapter(conversations, this);
@@ -64,10 +79,6 @@ public class MainActivity extends BaseActivity implements ConversionListener {
         byte[] bytes = Base64.decode(preferenceManager.getString(Constants.KEY_IMAGE), Base64.DEFAULT);
         Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
         binding.imageProfile.setImageBitmap(bitmap);
-    }
-
-    private void showToast(String message) {
-        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }
 
     private void listenConversations() {

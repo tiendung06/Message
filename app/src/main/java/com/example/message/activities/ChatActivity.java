@@ -119,9 +119,9 @@ public class ChatActivity extends BaseActivity {
                 if (response.isSuccessful()) {
                     try {
                         if (response.body() != null) {
-                            JSONObject responeJson = new JSONObject(response.body());
-                            JSONArray results = responeJson.getJSONArray("results");
-                            if (responeJson.getInt("failure") == 1) {
+                            JSONObject responseJson = new JSONObject(response.body());
+                            JSONArray results = responseJson.getJSONArray("results");
+                            if (responseJson.getInt("failure") == 1) {
                                 JSONObject error = (JSONObject) results.get(0);
                                 System.out.println(error.getString("error"));
                                 return;
@@ -239,7 +239,7 @@ public class ChatActivity extends BaseActivity {
     }
 
     private String getReadableDateTime(Date date) {
-        return new SimpleDateFormat("hh:mm a, dd/MM/yyyy", Locale.getDefault()).format(date);
+        return new SimpleDateFormat("HH:mm, dd/MM/yyyy", Locale.getDefault()).format(date);
     }
 
     private void addConversion(HashMap<String, Object> conversion) {
@@ -253,7 +253,6 @@ public class ChatActivity extends BaseActivity {
                 database.collection(Constants.KEY_COLLECTION_CONVERSATIONS).document(conversionId);
         documentReference.update(
                 Constants.KEY_LAST_MESSAGE, message,
-                Constants.KEY_SENDER_NAME, preferenceManager.getString(Constants.KEY_NAME),
                 Constants.KEY_TIMESTAMP, new Date()
         );
     }

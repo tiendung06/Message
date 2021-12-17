@@ -15,8 +15,12 @@
     <string name="change_avatar">Đổi ảnh đại diện</string>
     <string name="change_name">Đổi tên người dùng</string>
     <string name="change_password">Đổi mật khẩu</string>
+    <string name="current_password">Mật khẩu hiện tại</string>
+    <string name="new_password">Mật khẩu mới</string>
+    <string name="confirm_new_password">Nhập lại mật khẩu mới</string>
     <string name="chat">Chat</string>
     <string name="sign_out">Đăng xuất</string>
     <string name="choose_image">Chọn ảnh</string>
     <string name="type_message">Nhập tin nhắn</string>
+    <string name="username">Tên người dùng</string>
 </resources>

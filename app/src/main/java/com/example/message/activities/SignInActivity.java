@@ -61,7 +61,7 @@ public class SignInActivity extends AppCompatActivity {
                         startActivity(intent);
                     } else {
                         loading(false);
-                        showToast("Unable to sign in");
+                        showToast("Đăng nhập không thành công");
                     }
                 });
     }
@@ -82,15 +82,15 @@ public class SignInActivity extends AppCompatActivity {
 
     private Boolean isValidSignInDetails() {
         if (Objects.requireNonNull(binding.inputEmail.getText()).toString().trim().isEmpty()) {
-            binding.inputEmail.setError("Enter email");
+            binding.inputEmail.setError("Email không được để trống");
             binding.inputEmail.requestFocus();
             return false;
         } else if (!Patterns.EMAIL_ADDRESS.matcher(binding.inputEmail.getText().toString()).matches()) {
-            binding.inputEmail.setError("Enter valid email");
+            binding.inputEmail.setError("Nhập email hợp lệ");
             binding.inputEmail.requestFocus();
             return false;
         } else if (Objects.requireNonNull(binding.inputPassword.getText()).toString().isEmpty()) {
-            binding.inputPassword.setError("Enter password");
+            binding.inputPassword.setError("Mật khẩu không được để trống");
             binding.inputPassword.requestFocus();
             return false;
         }
