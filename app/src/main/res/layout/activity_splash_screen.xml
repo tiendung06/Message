@@ -9,14 +9,12 @@
 
     <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/iconApp"
-            android:layout_width="@dimen/_120sdp"
-            android:layout_height="@dimen/_120sdp"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:src="@mipmap/ic_launcher"/>
-
-
+            android:src="@drawable/messages"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
