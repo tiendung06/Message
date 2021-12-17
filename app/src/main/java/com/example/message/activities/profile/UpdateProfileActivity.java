@@ -33,6 +33,12 @@ public class UpdateProfileActivity extends BaseActivity {
         setListener();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        loadUserDetails();
+    }
+
     private void setListener() {
         binding.imageBack.setOnClickListener(v -> onBackPressed());
         binding.imageSignOut.setOnClickListener(v -> signOut());
@@ -42,6 +48,10 @@ public class UpdateProfileActivity extends BaseActivity {
         });
         binding.changePassword.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), UpdatePasswordActivity.class);
+            startActivity(intent);
+        });
+        binding.changeAvatar.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), UpdateAvatarActivity.class);
             startActivity(intent);
         });
     }
@@ -59,9 +69,9 @@ public class UpdateProfileActivity extends BaseActivity {
 
     private void signOut() {
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
-        alert.setTitle("Sign out");
-        alert.setMessage("Do you want to sign out?");
-        alert.setPositiveButton("Yes", (dialog, which) -> {
+        alert.setTitle("Đăng xuất");
+        alert.setMessage("Bạn có muốn đăng xuất không?");
+        alert.setPositiveButton("Đăng xuất", (dialog, which) -> {
             FirebaseFirestore database = FirebaseFirestore.getInstance();
             DocumentReference documentReference = database.collection(Constants.KEY_COLLECTION_USERS).document(
                     preferenceManager.getString(Constants.KEY_USER_ID));
@@ -72,9 +82,9 @@ public class UpdateProfileActivity extends BaseActivity {
                         startActivity(new Intent(getApplicationContext(), SignInActivity.class));
                         finish();
                     })
-                    .addOnFailureListener(e -> showToast("Unable to sign out"));
+                    .addOnFailureListener(e -> showToast("Đăng xuất thất bại"));
         });
-        alert.setNegativeButton("No", null);
+        alert.setNegativeButton("Hủy", null);
         alert.create().show();
     }
 }

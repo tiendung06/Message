@@ -11,6 +11,8 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.Message">
+        <activity android:name=".activities.profile.UpdateAvatarActivity">
+        </activity>
         <activity android:name=".activities.profile.UpdateUsernameActivity">
         </activity>
         <activity android:name=".activities.profile.UpdatePasswordActivity">
