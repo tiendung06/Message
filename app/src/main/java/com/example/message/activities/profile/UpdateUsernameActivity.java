@@ -2,7 +2,7 @@ package com.example.message.activities.profile;
 
 import android.os.Bundle;
 import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
+import com.example.message.activities.BaseActivity;
 import com.example.message.databinding.ActivityUpdateUsernameBinding;
 import com.example.message.utilities.Constants;
 import com.example.message.utilities.PreferenceManager;
@@ -14,7 +14,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import java.util.HashMap;
 import java.util.Objects;
 
-public class UpdateUsernameActivity extends AppCompatActivity {
+public class UpdateUsernameActivity extends BaseActivity {
     private ActivityUpdateUsernameBinding binding;
     PreferenceManager preferenceManager;
 
@@ -65,7 +65,7 @@ public class UpdateUsernameActivity extends AppCompatActivity {
                 .addOnCompleteListener(task -> {
                     for (QueryDocumentSnapshot document : Objects.requireNonNull(task.getResult())) {
                         String documentID = document.getId();
-                        database.collection(Constants.KEY_COLLECTION_CONVERSATIONS)
+                        collectionReference
                                 .document(documentID)
                                 .update(updateSenderName)
                                 .addOnSuccessListener(unused -> {
@@ -82,7 +82,7 @@ public class UpdateUsernameActivity extends AppCompatActivity {
                 .addOnCompleteListener(task -> {
                     for (QueryDocumentSnapshot document : Objects.requireNonNull(task.getResult())) {
                         String documentID = document.getId();
-                        database.collection(Constants.KEY_COLLECTION_CONVERSATIONS)
+                        collectionReference
                                 .document(documentID)
                                 .update(updateReceiverName)
                                 .addOnSuccessListener(unused -> {
@@ -94,7 +94,7 @@ public class UpdateUsernameActivity extends AppCompatActivity {
 
     private Boolean isValidUsernameDetails() {
         if (Objects.requireNonNull(binding.inputChangeUsername.getText()).toString().trim().isEmpty()) {
-            binding.inputChangeUsername.setError("Nhập tên người dùng mới");
+            binding.inputChangeUsername.setError("Tên người dùng không dược để trống");
             binding.inputChangeUsername.requestFocus();
             return false;
         }

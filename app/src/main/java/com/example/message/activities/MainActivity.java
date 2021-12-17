@@ -42,6 +42,12 @@ public class MainActivity extends BaseActivity implements ConversionListener {
         listenConversations();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        loadUserDetails();
+    }
+
     private void init() {
         conversations = new ArrayList<>();
         conversationAdapter = new RecentConversationAdapter(conversations, this);
@@ -128,7 +134,7 @@ public class MainActivity extends BaseActivity implements ConversionListener {
                 preferenceManager.getString(Constants.KEY_USER_ID)
         );
         documentReference.update(Constants.KEY_FCM_TOKEN, token)
-                .addOnFailureListener(e -> showToast("Unable to update token"));
+                .addOnFailureListener(e -> System.out.println("Unable to update token"));
     }
 
     @Override

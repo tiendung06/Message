@@ -123,16 +123,16 @@ public class ChatActivity extends BaseActivity {
                             JSONArray results = responeJson.getJSONArray("results");
                             if (responeJson.getInt("failure") == 1) {
                                 JSONObject error = (JSONObject) results.get(0);
-                                showToast(error.getString("error"));
+                                System.out.println(error.getString("error"));
                                 return;
                             }
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
-                    showToast("Notification sent successfully");
+                    System.out.println("Notification sent successfully");
                 } else {
-                    showToast("Error: " + response.code());
+                    System.out.println("Error: " + response.code());
                 }
             }
 
@@ -253,6 +253,7 @@ public class ChatActivity extends BaseActivity {
                 database.collection(Constants.KEY_COLLECTION_CONVERSATIONS).document(conversionId);
         documentReference.update(
                 Constants.KEY_LAST_MESSAGE, message,
+                Constants.KEY_SENDER_NAME, preferenceManager.getString(Constants.KEY_NAME),
                 Constants.KEY_TIMESTAMP, new Date()
         );
     }
