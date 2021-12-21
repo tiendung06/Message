@@ -33,7 +33,7 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:textSize="@dimen/_13sdp"
-            android:textColor="@color/black"
+            android:textColor="?attr/text"
             app:layout_constraintBottom_toTopOf="@id/viewSupporter"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/imageProfile"/>
@@ -47,7 +47,7 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:textSize="@dimen/_12sdp"
-            android:textColor="@color/text_recent"
+            android:textColor="?attr/text_recent"
             app:layout_constraintWidth_max="@dimen/_130sdp"
             app:layout_constraintStart_toEndOf="@id/imageProfile"
             app:layout_constraintTop_toBottomOf="@id/viewSupporter"/>

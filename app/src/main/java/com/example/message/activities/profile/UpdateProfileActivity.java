@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.util.Base64;
 import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatDelegate;
+import com.example.message.R;
 import com.example.message.activities.BaseActivity;
 import com.example.message.activities.SignInActivity;
 import com.example.message.databinding.ActivityUpdateProfileBinding;
@@ -20,11 +22,15 @@ import java.util.HashMap;
 
 public class UpdateProfileActivity extends BaseActivity {
     private ActivityUpdateProfileBinding binding;
-    private String encodedImage;
     private PreferenceManager preferenceManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+            setTheme(R.style.Theme_Message);
+        } else {
+            setTheme(R.style.Theme_Message);
+        }
         super.onCreate(savedInstanceState);
         binding = ActivityUpdateProfileBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -53,6 +59,22 @@ public class UpdateProfileActivity extends BaseActivity {
         binding.changeAvatar.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), UpdateAvatarActivity.class);
             startActivity(intent);
+        });
+        darkMode();
+    }
+
+    void darkMode() {
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+            binding.darkMode.setChecked(true);
+        }
+        binding.darkMode.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                preferenceManager.putBoolean(Constants.DARK_MODE, true);
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                preferenceManager.putBoolean(Constants.DARK_MODE, false);
+            }
         });
     }
 

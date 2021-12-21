@@ -5,6 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="?attr/background_color"
         tools:context=".activities.profile.UpdateUsernameActivity">
 
     <androidx.appcompat.widget.AppCompatImageView
@@ -15,7 +16,7 @@
             android:layout_marginEnd="@dimen/_16sdp"
             android:layout_marginTop="@dimen/_12sdp"
             android:padding="@dimen/_5sdp"
-            app:tint="@color/blue"
+            app:tint="?attr/button_color"
             android:src="@drawable/ic_baseline_arrow_back_ios_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -26,7 +27,7 @@
             android:layout_height="wrap_content"
             android:text="@string/change_name"
             android:textSize="@dimen/_14sdp"
-            android:textColor="@color/black"
+            android:textColor="?attr/text"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/imageBack"
             app:layout_constraintEnd_toEndOf="parent"
@@ -73,7 +74,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_50sdp"
                     app:cornerRadius="@dimen/_8sdp"
-                    android:text="@string/change_name"/>
+                    android:text="@string/change_name"
+                    app:backgroundTint="?attr/button_color"
+                    android:textColor="?attr/text_button"/>
 
             <ProgressBar
                     android:id="@+id/progressBar"

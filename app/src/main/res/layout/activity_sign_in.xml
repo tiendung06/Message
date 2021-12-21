@@ -9,6 +9,7 @@
         android:clipToPadding="false"
         android:padding="@dimen/_24sdp"
         android:scrollbars="none"
+        android:background="?attr/background_color"
         tools:context=".activities.SignInActivity">
 
     <LinearLayout
@@ -23,7 +24,7 @@
                 android:text="@string/sign_in_launcher"
                 android:textSize="@dimen/_18sdp"
                 android:textStyle="bold"
-                android:textColor="@android:color/black"/>
+                android:textColor="?attr/text"/>
         <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_50sdp"
@@ -73,7 +74,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_50sdp"
                     app:cornerRadius="@dimen/_8sdp"
-                    android:text="@string/sign_in"/>
+                    android:text="@string/sign_in"
+                    app:backgroundTint="?attr/button_color"
+                    android:textColor="?attr/text_button"/>
 
             <ProgressBar
                     android:id="@+id/progressBar"
@@ -101,7 +104,7 @@
                     android:paddingStart="@dimen/_3sdp"
                     android:paddingEnd="@dimen/_3sdp"
                     android:text="@string/sign_up"
-                    android:textColor="@color/blue"
+                    android:textColor="?attr/button_color"
                     android:textSize="@dimen/_12sdp"/>
         </LinearLayout>
 

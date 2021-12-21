@@ -6,6 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:animateLayoutChanges="true"
+        android:background="?attr/background_color"
         tools:context=".activities.ChatActivity">
 
     <View
@@ -32,7 +33,7 @@
             android:layout_marginTop="@dimen/_5sdp"
             android:padding="@dimen/_5sdp"
             android:src="@drawable/ic_baseline_arrow_back_ios_24"
-            android:tint="@color/blue"
+            android:tint="?attr/button_color"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
@@ -59,7 +60,7 @@
             android:maxLines="1"
             android:textSize="@dimen/_14sdp"
             android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="?attr/text"
             app:layout_constraintEnd_toStartOf="@id/imageInfo"
             app:layout_constraintStart_toEndOf="@id/imageBack"
             app:layout_constraintTop_toTopOf="@id/imageBack"/>
@@ -79,7 +80,7 @@
             android:layout_marginTop="@dimen/_2sdp"
             android:text="@string/online"
             android:textSize="@dimen/_10sdp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:padding="@dimen/_3sdp"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@id/viewSupporter"/>
@@ -124,7 +125,7 @@
                 android:layout_marginLeft="@dimen/_4sdp"
                 android:padding="@dimen/_2sdp"
                 android:src="@drawable/ic_sharp_send_24"
-                android:tint="@color/blue"/>
+                android:tint="?attr/button_color"/>
 
     </FrameLayout>
 
@@ -146,8 +147,8 @@
             android:paddingEnd="@dimen/_16sdp"
             android:paddingTop="@dimen/_5sdp"
             android:paddingBottom="@dimen/_5sdp"
-            android:textColor="@color/text_input"
-            android:textColorHint="@color/text_hint"
+            android:textColor="?attr/text_input"
+            android:textColorHint="?attr/text_hint"
             app:layout_constraintHeight_max="@dimen/_130sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/layoutSend"

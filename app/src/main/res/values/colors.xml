@@ -9,8 +9,19 @@
     <color name="white">#FFFFFF</color>
     <color name="grey">#0D000000</color>
     <color name="blue">#6474FF</color>
-    <color name="time">#4D000000</color>
-    <color name="text_input">#7D7D7D</color>
+    <color name="button_color">#6474FF</color>
+    <color name="text_button">#FFFFFF</color>
     <color name="text_hint">#999999</color>
-    <color name="text_recent">#66000000</color>
+    <!-- Light. -->
+    <color name="background_color">#FFFFFF</color>
+    <color name="text">#000000</color>
+    <color name="text_recent">#80000000</color>
+    <color name="time">#4D000000</color>
+    <color name="background_chat_input">#0D000000</color>
+    <!-- Dark. -->
+    <color name="background_color_dark">#000000</color>
+    <color name="text_dark">#FFF</color>
+    <color name="text_recent_dark">#80FFFFFF</color>
+    <color name="time_dark">#80FFFFFF</color>
+    <color name="background_chat_input_dark">#33FFFFFF</color>
 </resources>
