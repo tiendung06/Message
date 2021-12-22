@@ -16,7 +16,7 @@
             android:layout_marginEnd="@dimen/_16sdp"
             android:layout_marginTop="@dimen/_12sdp"
             android:padding="@dimen/_5sdp"
-            app:tint="@color/blue"
+            app:tint="?attr/button_color"
             android:src="@drawable/ic_baseline_arrow_back_ios_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -116,7 +116,7 @@
         <com.google.android.material.button.MaterialButton
                 android:id="@+id/imageSignOut"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/_50sdp"
                 android:layout_marginTop="@dimen/_25sdp"
                 android:layout_marginHorizontal="@dimen/_24sdp"
                 app:cornerRadius="@dimen/_8sdp"
