@@ -13,6 +13,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import com.example.message.R;
 import com.example.message.databinding.ActivitySignUpBinding;
 import com.example.message.utilities.Constants;
 import com.example.message.utilities.PreferenceManager;
@@ -116,31 +117,31 @@ public class SignUpActivity extends AppCompatActivity {
 
     private Boolean isValidSignUpDetails() {
         if (encodedImage == null) {
-            showToast("Ảnh đại diện không được để trống");
+            showToast(getString(R.string.empty_avatar));
             return false;
         }
         if (Objects.requireNonNull(binding.inputName.getText()).toString().trim().isEmpty()) {
-            binding.inputName.setError("Tên người dùng không được để trống");
+            binding.inputName.setError(getString(R.string.empty_username));
             binding.inputName.requestFocus();
             return false;
         } else if (Objects.requireNonNull(binding.inputEmail.getText()).toString().trim().isEmpty()) {
-            binding.inputEmail.setError("Email không được để trống");
+            binding.inputEmail.setError(getString(R.string.empty_email));
             binding.inputEmail.requestFocus();
             return false;
         } else if (!Patterns.EMAIL_ADDRESS.matcher(binding.inputEmail.getText().toString()).matches()) {
-            binding.inputEmail.setError("Nhập email hợp lệ");
+            binding.inputEmail.setError(getString(R.string.invalid_email));
             binding.inputEmail.requestFocus();
             return false;
         } else if (Objects.requireNonNull(binding.inputPassword.getText()).toString().trim().isEmpty()) {
-            binding.inputPassword.setError("Password không được để trống");
+            binding.inputPassword.setError(getString(R.string.empty_password));
             binding.inputPassword.requestFocus();
             return false;
         } else if (Objects.requireNonNull(binding.inputConfirmPassword.getText()).toString().trim().isEmpty()) {
-            binding.inputConfirmPassword.setError("Nhập lại mật khẩu không đúng");
+            binding.inputConfirmPassword.setError(getString(R.string.incorrect_confirm_password));
             binding.inputConfirmPassword.requestFocus();
             return false;
         } else if (!binding.inputPassword.getText().toString().equals(binding.inputConfirmPassword.getText().toString())) {
-            binding.inputConfirmPassword.setError("Nhập lại mật khẩu không đúng");
+            binding.inputConfirmPassword.setError(getString(R.string.incorrect_confirm_password));
             binding.inputConfirmPassword.requestFocus();
             return false;
         }

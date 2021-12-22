@@ -91,9 +91,9 @@ public class UpdateProfileActivity extends BaseActivity {
 
     private void signOut() {
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
-        alert.setTitle("Đăng xuất");
-        alert.setMessage("Bạn có muốn đăng xuất không?");
-        alert.setPositiveButton("Đăng xuất", (dialog, which) -> {
+        alert.setTitle(R.string.sign_out);
+        alert.setMessage(R.string.confirm_sign_out);
+        alert.setPositiveButton(R.string.sign_out, (dialog, which) -> {
             FirebaseFirestore database = FirebaseFirestore.getInstance();
             DocumentReference documentReference = database.collection(Constants.KEY_COLLECTION_USERS).document(
                     preferenceManager.getString(Constants.KEY_USER_ID));
@@ -104,9 +104,9 @@ public class UpdateProfileActivity extends BaseActivity {
                         startActivity(new Intent(getApplicationContext(), SignInActivity.class));
                         finish();
                     })
-                    .addOnFailureListener(e -> showToast("Đăng xuất thất bại"));
+                    .addOnFailureListener(e -> showToast(getString(R.string.cannot_sign_out)));
         });
-        alert.setNegativeButton("Hủy", null);
+        alert.setNegativeButton(R.string.cancel, null);
         alert.create().show();
     }
 }

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Base64;
 import android.view.View;
 import android.widget.Toast;
+import com.example.message.R;
 import com.example.message.activities.profile.UpdateProfileActivity;
 import com.example.message.adapters.RecentConversationAdapter;
 import com.example.message.databinding.ActivityMainBinding;
@@ -57,7 +58,7 @@ public class MainActivity extends BaseActivity implements ConversionListener {
             super.onBackPressed();
             return;
         } else {
-            toast = Toast.makeText(MainActivity.this, "Nhấn back lần nữa để thoát", Toast.LENGTH_SHORT);
+            toast = Toast.makeText(MainActivity.this, getString(R.string.doubleBackToExitPressedOnce), Toast.LENGTH_SHORT);
             toast.show();
         }
         backPressedTime = System.currentTimeMillis();

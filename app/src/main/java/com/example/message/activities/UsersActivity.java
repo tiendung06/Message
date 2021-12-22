@@ -3,6 +3,7 @@ package com.example.message.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import com.example.message.R;
 import com.example.message.adapters.UsersAdapter;
 import com.example.message.databinding.ActivityUsersBinding;
 import com.example.message.listeners.UserListener;
@@ -69,7 +70,7 @@ public class UsersActivity extends BaseActivity implements UserListener {
     }
 
     private void showErrorMessage() {
-        binding.textErrorMessage.setText(String.format("%s", "Không có người dùng khả dụng"));
+        binding.textErrorMessage.setText(String.format("%s", getString(R.string.no_user_available)));
         binding.textErrorMessage.setVisibility(View.VISIBLE);
     }
 

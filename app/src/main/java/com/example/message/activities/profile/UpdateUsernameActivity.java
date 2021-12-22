@@ -2,6 +2,7 @@ package com.example.message.activities.profile;
 
 import android.os.Bundle;
 import android.widget.Toast;
+import com.example.message.R;
 import com.example.message.activities.BaseActivity;
 import com.example.message.databinding.ActivityUpdateUsernameBinding;
 import com.example.message.utilities.Constants;
@@ -51,10 +52,10 @@ public class UpdateUsernameActivity extends BaseActivity {
                 .addOnSuccessListener(unused -> {
                     preferenceManager.putString(Constants.KEY_NAME,
                             binding.inputChangeUsername.getText().toString().trim());
-                    showToast("Đổi tên người dùng thành công");
+                    showToast(getString(R.string.update_username_success));
 
                 })
-                .addOnFailureListener(e -> showToast("Không thể đổi tên người dùng"));
+                .addOnFailureListener(e -> showToast(getString(R.string.update_username_fail)));
 
         CollectionReference collectionReference = database.collection(Constants.KEY_COLLECTION_CONVERSATIONS);
         HashMap<String, Object> updateSenderName = new HashMap<>();
@@ -68,9 +69,7 @@ public class UpdateUsernameActivity extends BaseActivity {
                         collectionReference
                                 .document(documentID)
                                 .update(updateSenderName)
-                                .addOnSuccessListener(unused -> {
-                                    finish();
-                                });
+                                .addOnSuccessListener(unused -> finish());
                     }
                 });
 
@@ -85,16 +84,14 @@ public class UpdateUsernameActivity extends BaseActivity {
                         collectionReference
                                 .document(documentID)
                                 .update(updateReceiverName)
-                                .addOnSuccessListener(unused -> {
-                                    finish();
-                                });
+                                .addOnSuccessListener(unused -> finish());
                     }
                 });
     }
 
     private Boolean isValidUsernameDetails() {
         if (Objects.requireNonNull(binding.inputChangeUsername.getText()).toString().trim().isEmpty()) {
-            binding.inputChangeUsername.setError("Tên người dùng không dược để trống");
+            binding.inputChangeUsername.setError(getString(R.string.empty_username));
             binding.inputChangeUsername.requestFocus();
             return false;
         }

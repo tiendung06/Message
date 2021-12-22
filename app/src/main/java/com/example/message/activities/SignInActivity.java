@@ -1,11 +1,12 @@
 package com.example.message.activities;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
+import com.example.message.R;
 import com.example.message.databinding.ActivitySignInBinding;
 import com.example.message.utilities.Constants;
 import com.example.message.utilities.PreferenceManager;
@@ -61,7 +62,7 @@ public class SignInActivity extends AppCompatActivity {
                         startActivity(intent);
                     } else {
                         loading(false);
-                        showToast("Đăng nhập không thành công");
+                        showToast(getString(R.string.incorrect_account));
                     }
                 });
     }
@@ -82,15 +83,15 @@ public class SignInActivity extends AppCompatActivity {
 
     private Boolean isValidSignInDetails() {
         if (Objects.requireNonNull(binding.inputEmail.getText()).toString().trim().isEmpty()) {
-            binding.inputEmail.setError("Email không được để trống");
+            binding.inputEmail.setError(getString(R.string.empty_email));
             binding.inputEmail.requestFocus();
             return false;
         } else if (!Patterns.EMAIL_ADDRESS.matcher(binding.inputEmail.getText().toString()).matches()) {
-            binding.inputEmail.setError("Nhập email hợp lệ");
+            binding.inputEmail.setError(getString(R.string.invalid_email));
             binding.inputEmail.requestFocus();
             return false;
         } else if (Objects.requireNonNull(binding.inputPassword.getText()).toString().isEmpty()) {
-            binding.inputPassword.setError("Mật khẩu không được để trống");
+            binding.inputPassword.setError(getString(R.string.empty_password));
             binding.inputPassword.requestFocus();
             return false;
         }

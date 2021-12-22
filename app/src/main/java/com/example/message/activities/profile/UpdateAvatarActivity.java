@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Toast;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import com.example.message.R;
 import com.example.message.activities.BaseActivity;
 import com.example.message.databinding.ActivityUpdateAvatarBinding;
 import com.example.message.utilities.Constants;
@@ -67,9 +68,9 @@ public class UpdateAvatarActivity extends BaseActivity {
         documentReference.update(updates)
                 .addOnSuccessListener(unused -> {
                     preferenceManager.putString(Constants.KEY_IMAGE, encodedImage);
-                    showToast("Đổi ảnh đại diện thành công");
+                    showToast(getString(R.string.update_avatar_success));
                 })
-                .addOnFailureListener(e -> showToast("Không thể đổi ảnh đại diện"));
+                .addOnFailureListener(e -> showToast(getString(R.string.update_avatar_fail)));
 
         CollectionReference collectionReference = database.collection(Constants.KEY_COLLECTION_CONVERSATIONS);
         HashMap<String, Object> updateSenderImage = new HashMap<>();
@@ -129,7 +130,7 @@ public class UpdateAvatarActivity extends BaseActivity {
 
     private Boolean isValidChangeAvatar() {
         if (encodedImage == null) {
-            showToast("Ảnh đại diện không được để trống");
+            showToast(getString(R.string.empty_avatar));
             return false;
         }
         return true;
