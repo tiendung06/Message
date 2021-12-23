@@ -69,6 +69,7 @@ public class UpdateAvatarActivity extends BaseActivity {
                 .addOnSuccessListener(unused -> {
                     preferenceManager.putString(Constants.KEY_IMAGE, encodedImage);
                     showToast(getString(R.string.update_avatar_success));
+                    finish();
                 })
                 .addOnFailureListener(e -> showToast(getString(R.string.update_avatar_fail)));
 
