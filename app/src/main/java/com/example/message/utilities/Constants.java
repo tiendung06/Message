@@ -30,6 +30,9 @@ public class Constants {
     public static final String REMOTE_MSG_DATA = "data";
     public static final String REMOTE_MSG_REGISTRATION_IDS = "registration_ids";
     public static final String DARK_MODE = "darkMode";
+    public static final String KEY_CITY = "city";
+    public static final String KEY_COUNTRY = "country";
+    public static final String KEY_JOB = "job";
     public static HashMap<String, String> remoteMsgHeaders = null;
 
     public static HashMap<String, String> getRemoteMsgHeaders() {

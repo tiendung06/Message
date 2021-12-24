@@ -1,5 +1,6 @@
 package com.example.message.activities;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -235,6 +236,11 @@ public class ChatActivity extends BaseActivity {
             if (!binding.inputMessage.getText().toString().isEmpty()) {
                 sendMessage();
             }
+        });
+        binding.imageInfo.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), UsersInformActivity.class);
+            intent.putExtra(Constants.KEY_RECEIVER_ID, receiverUser.id);
+            startActivity(intent);
         });
     }
 

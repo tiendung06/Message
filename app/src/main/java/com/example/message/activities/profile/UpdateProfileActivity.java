@@ -12,6 +12,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.SwitchCompat;
 import com.example.message.R;
+import com.example.message.activities.AccountInformActivity;
 import com.example.message.activities.BaseActivity;
 import com.example.message.activities.SignInActivity;
 import com.example.message.databinding.ActivityUpdateProfileBinding;
@@ -60,6 +61,14 @@ public class UpdateProfileActivity extends BaseActivity {
             Intent intent = new Intent(getApplicationContext(), UpdateAvatarActivity.class);
             startActivity(intent);
         });
+        binding.updateInformation.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), UpdateInformActivity.class);
+            startActivity(intent);
+        });
+        binding.accountInform.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), AccountInformActivity.class);
+            startActivity(intent);
+        });
         darkMode();
     }
 
@@ -82,14 +91,12 @@ public class UpdateProfileActivity extends BaseActivity {
             if (isChecked) {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                 darkMode.setChecked(true);
-                setTheme(R.style.Theme_Message);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putBoolean(Constants.DARK_MODE, true);
                 editor.apply();
             } else {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                 darkMode.setChecked(false);
-                setTheme(R.style.Theme_Message);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putBoolean(Constants.DARK_MODE, false);
                 editor.apply();

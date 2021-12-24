@@ -5,13 +5,11 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="?attr/background_color">
-
+        android:background="?attr/background_color"
+        tools:context=".activities.UsersInformActivity">
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:context=".activities.profile.UpdateProfileActivity">
-
+            android:layout_height="wrap_content">
         <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/imageBack"
                 android:layout_width="@dimen/_30sdp"
@@ -50,8 +48,7 @@
                     android:textSize="@dimen/_15sdp"
                     android:textColor="?attr/text"/>
 
-            <FrameLayout
-                    android:id="@+id/account_inform"
+            <LinearLayout
                     android:layout_marginTop="@dimen/_16sdp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -60,32 +57,28 @@
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/account_inform"
+                        android:text="@string/email"
                         android:textSize="@dimen/_12sdp"
+                        android:textStyle="bold"
                         android:textColor="?attr/text"
-                        android:padding="@dimen/_10sdp"
+                        android:paddingVertical="@dimen/_10sdp"
                         android:layout_gravity="center_vertical"/>
-            </FrameLayout>
 
-            <FrameLayout
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/_24sdp">
-
-                <androidx.appcompat.widget.SwitchCompat
-                        android:padding="@dimen/_10sdp"
-                        android:id="@+id/dark_mode"
-                        android:checked="false"
-                        android:text="@string/dark_mode"
+                <TextView
+                        android:id="@+id/email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/email"
                         android:textSize="@dimen/_12sdp"
                         android:textColor="?attr/text"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
-            </FrameLayout>
+                        android:paddingVertical="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_gravity="center_vertical"/>
 
-            <FrameLayout
-                    android:id="@+id/change_avatar"
+            </LinearLayout>
+
+            <LinearLayout
                     android:layout_marginTop="@dimen/_10sdp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -94,15 +87,28 @@
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/change_avatar"
+                        android:text="@string/city"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="bold"
+                        android:textColor="?attr/text"
+                        android:paddingVertical="@dimen/_10sdp"
+                        android:layout_gravity="center_vertical"/>
+
+                <TextView
+                        android:id="@+id/city"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/city"
                         android:textSize="@dimen/_12sdp"
                         android:textColor="?attr/text"
-                        android:padding="@dimen/_10sdp"
+                        android:paddingVertical="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginLeft="@dimen/_5sdp"
                         android:layout_gravity="center_vertical"/>
-            </FrameLayout>
 
-            <FrameLayout
-                    android:id="@+id/change_name"
+            </LinearLayout>
+
+            <LinearLayout
                     android:layout_marginTop="@dimen/_10sdp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -111,15 +117,28 @@
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/change_name"
+                        android:text="@string/country"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="bold"
+                        android:textColor="?attr/text"
+                        android:paddingVertical="@dimen/_10sdp"
+                        android:layout_gravity="center_vertical"/>
+
+                <TextView
+                        android:id="@+id/country"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/country"
                         android:textSize="@dimen/_12sdp"
                         android:textColor="?attr/text"
-                        android:padding="@dimen/_10sdp"
+                        android:paddingVertical="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginLeft="@dimen/_5sdp"
                         android:layout_gravity="center_vertical"/>
-            </FrameLayout>
 
-            <FrameLayout
-                    android:id="@+id/change_password"
+            </LinearLayout>
+
+            <LinearLayout
                     android:layout_marginTop="@dimen/_10sdp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -128,41 +147,26 @@
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/change_password"
+                        android:text="@string/job"
                         android:textSize="@dimen/_12sdp"
+                        android:textStyle="bold"
                         android:textColor="?attr/text"
-                        android:padding="@dimen/_10sdp"
+                        android:paddingVertical="@dimen/_10sdp"
                         android:layout_gravity="center_vertical"/>
-            </FrameLayout>
-
-            <FrameLayout
-                    android:id="@+id/update_information"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/_24sdp">
 
                 <TextView
+                        android:id="@+id/job"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/update_inform"
+                        android:text="@string/job"
                         android:textSize="@dimen/_12sdp"
                         android:textColor="?attr/text"
-                        android:padding="@dimen/_10sdp"
+                        android:paddingVertical="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginLeft="@dimen/_5sdp"
                         android:layout_gravity="center_vertical"/>
-            </FrameLayout>
 
-            <com.google.android.material.button.MaterialButton
-                    android:id="@+id/imageSignOut"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_50sdp"
-                    android:layout_marginVertical="@dimen/_25sdp"
-                    android:layout_marginHorizontal="@dimen/_24sdp"
-                    app:cornerRadius="@dimen/_8sdp"
-                    android:padding="@dimen/_10sdp"
-                    android:text="@string/sign_out"
-                    app:backgroundTint="?attr/button_color"
-                    android:textColor="?attr/text_button"/>
+            </LinearLayout>
 
         </LinearLayout>
 

@@ -47,4 +47,12 @@
     <string name="empty_new_password">Mật khẩu mới không được để trống</string>
     <string name="incorrect_confirm_new_password">Xác nhận mật khẩu mới không đúng</string>
     <string name="no_user_available">Không có người dùng khả dụng</string>
+    <string name="city">Thành phố</string>
+    <string name="country">Quốc gia</string>
+    <string name="job">Nghề nghiệp</string>
+    <string name="update_inform">Cập nhật thông tin</string>
+    <string name="undetected">Không xác định</string>
+    <string name="update_inform_success">Cập nhật thông tin cá nhân thành công</string>
+    <string name="update_inform_fail">Cập nhật thông tin cá nhân thất bại</string>
+    <string name="account_inform">Thông tin người dùng</string>
 </resources>

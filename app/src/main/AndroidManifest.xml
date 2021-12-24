@@ -11,6 +11,12 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.Message">
+        <activity android:name=".activities.AccountInformActivity">
+        </activity>
+        <activity android:name=".activities.UsersInformActivity">
+        </activity>
+        <activity android:name=".activities.profile.UpdateInformActivity">
+        </activity>
         <activity android:name=".activities.profile.UpdateAvatarActivity">
         </activity>
         <activity android:name=".activities.profile.UpdateUsernameActivity">

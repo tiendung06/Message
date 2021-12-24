@@ -46,4 +46,12 @@
     <string name="empty_new_password">New password cannot not be empty</string>
     <string name="incorrect_confirm_new_password">Incorrect confirm new password</string>
     <string name="no_user_available">No user available</string>
+    <string name="city">City</string>
+    <string name="country">Country</string>
+    <string name="job">Job</string>
+    <string name="update_inform">Update information</string>
+    <string name="undetected">Undetected</string>
+    <string name="update_inform_success">Update information success</string>
+    <string name="update_inform_fail">Update information fail</string>
+    <string name="account_inform">User inform</string>
 </resources>
