@@ -53,5 +53,10 @@
     <string name="undetected">Undetected</string>
     <string name="update_inform_success">Update information success</string>
     <string name="update_inform_fail">Update information fail</string>
-    <string name="account_inform">User inform</string>
+    <string name="account_inform">User information</string>
+    <string name="gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="birthday">Birthday</string>
+    <string name="select">Click to select date</string>
 </resources>

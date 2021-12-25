@@ -5,11 +5,14 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Base64;
 import androidx.appcompat.app.AppCompatActivity;
+import com.example.message.R;
 import com.example.message.databinding.ActivityAccountInformBinding;
 import com.example.message.utilities.Constants;
 import com.example.message.utilities.PreferenceManager;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.Objects;
 
 public class AccountInformActivity extends AppCompatActivity {
     private ActivityAccountInformBinding binding;
@@ -37,6 +40,14 @@ public class AccountInformActivity extends AppCompatActivity {
                 preferenceManager.getString(Constants.KEY_USER_ID));
         documentReference.get().addOnSuccessListener(documentSnapshot -> {
             binding.email.setText(documentSnapshot.getString(Constants.KEY_EMAIL));
+            if (Objects.requireNonNull(documentSnapshot.getString(Constants.KEY_GENDER)).equals(Constants.KEY_GENDER_MALE)) {
+                binding.gender.setText(R.string.male);
+            } else if (Objects.requireNonNull(documentSnapshot.getString(Constants.KEY_GENDER)).equals(Constants.KEY_GENDER_FEMALE)) {
+                binding.gender.setText(R.string.female);
+            } else {
+                binding.gender.setText(R.string.undetected);
+            }
+            binding.birthday.setText(documentSnapshot.getString(Constants.KEY_BIRTHDAY));
             binding.city.setText(documentSnapshot.getString(Constants.KEY_CITY));
             binding.country.setText(documentSnapshot.getString(Constants.KEY_COUNTRY));
             binding.job.setText(documentSnapshot.getString(Constants.KEY_JOB));

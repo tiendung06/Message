@@ -44,6 +44,62 @@
             app:layout_constraintTop_toBottomOf="@id/imageBack" tools:layout_editor_absoluteX="0dp"
             app:layout_constraintVertical_bias="0.0">
 
+        <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:orientation="horizontal">
+
+            <RadioButton
+                    android:id="@+id/male"
+                    android:text="@string/male"
+                    android:textSize="@dimen/_13sdp"
+                    android:textColor="?attr/text"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="wrap_content"
+                    android:checked="true"/>
+
+            <RadioButton
+                    android:id="@+id/female"
+                    android:text="@string/female"
+                    android:textColor="?attr/text"
+                    android:textSize="@dimen/_13sdp"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="wrap_content"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/birthday"
+                    android:textSize="@dimen/_13sdp"
+                    android:textStyle="bold"
+                    android:textColor="?attr/text"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_gravity="center_vertical"/>
+
+            <TextView
+                    android:id="@+id/birthday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/select"
+                    android:textSize="@dimen/_13sdp"
+                    android:textColor="?attr/text"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_gravity="center_vertical"/>
+
+        </LinearLayout>
+
         <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_50sdp"
@@ -93,7 +149,7 @@
                     android:id="@+id/inputJob"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:imeOptions="actionNext"
+                    android:imeOptions="actionDone"
                     android:importantForAutofill="no"
                     android:inputType="textPersonName|textCapSentences"
                     android:paddingStart="@dimen/_16sdp"

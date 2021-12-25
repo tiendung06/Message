@@ -69,6 +69,8 @@ public class SignUpActivity extends AppCompatActivity {
         user.put(Constants.KEY_CITY, getString(R.string.undetected));
         user.put(Constants.KEY_COUNTRY, getString(R.string.undetected));
         user.put(Constants.KEY_JOB, getString(R.string.undetected));
+        user.put(Constants.KEY_GENDER, getString(R.string.undetected));
+        user.put(Constants.KEY_BIRTHDAY, getString(R.string.undetected));
         database.collection(Constants.KEY_COLLECTION_USERS)
                 .add(user)
                 .addOnSuccessListener(documentReference -> {

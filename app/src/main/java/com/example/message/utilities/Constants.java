@@ -33,6 +33,10 @@ public class Constants {
     public static final String KEY_CITY = "city";
     public static final String KEY_COUNTRY = "country";
     public static final String KEY_JOB = "job";
+    public static final String KEY_GENDER = "gender";
+    public static final String KEY_BIRTHDAY = "birthday";
+    public static final String KEY_GENDER_MALE = "0";
+    public static final String KEY_GENDER_FEMALE = "1";
     public static HashMap<String, String> remoteMsgHeaders = null;
 
     public static HashMap<String, String> getRemoteMsgHeaders() {

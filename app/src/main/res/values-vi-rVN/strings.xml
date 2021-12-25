@@ -55,4 +55,9 @@
     <string name="update_inform_success">Cập nhật thông tin cá nhân thành công</string>
     <string name="update_inform_fail">Cập nhật thông tin cá nhân thất bại</string>
     <string name="account_inform">Thông tin người dùng</string>
+    <string name="gender">Giới tính</string>
+    <string name="male">Nam</string>
+    <string name="female">Nữ</string>
+    <string name="birthday">Ngày sinh</string>
+    <string name="select">Chọn ngày sinh</string>
 </resources>
