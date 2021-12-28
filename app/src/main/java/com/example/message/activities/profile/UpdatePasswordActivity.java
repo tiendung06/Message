@@ -63,7 +63,7 @@ public class UpdatePasswordActivity extends BaseActivity {
             return false;
         } else if (!Objects.requireNonNull(binding.inputCurrentPassword.getText()).toString().trim().equals(
                 preferenceManager.getString(Constants.KEY_PASSWORD))) {
-            binding.inputCurrentPassword.setError(getString(R.string.incorrect_confirm_password));
+            binding.inputCurrentPassword.setError(getString(R.string.incorrect_current_password));
             binding.inputCurrentPassword.requestFocus();
             return false;
         } else if (Objects.requireNonNull(binding.inputChangePassword.getText()).toString().trim().isEmpty()) {
